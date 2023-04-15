@@ -1,4 +1,4 @@
-import { CardContainer, HeaderCard } from "./styles";
+import { CardContainer, ContainerButton, HeaderCard, LineHorizontal } from "./styles";
 
 export function Card(){
     return(
@@ -7,9 +7,13 @@ export function Card(){
                 <h3>Para você começar</h3>
                 <div>
                     <h2>Essentials</h2>
-                    <p>R$ 19,97/mês</p>
+                    <p>19,97</p>
                 </div>
            </HeaderCard>
+           <ContainerButton>
+                Assinar agora
+           </ContainerButton>
+          <LineHorizontal />
         </CardContainer>
     );
 }

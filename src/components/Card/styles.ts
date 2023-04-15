@@ -12,7 +12,6 @@ export const CardContainer = styled.div`
   gap: 16px;
 
   background: ${({ theme }) => theme.colors.white};
-
 `;
 
 export const HeaderCard = styled.div`
@@ -81,9 +80,47 @@ export const ContainerButton = styled.button`
   line-height: 24px;
 `;
 
-
 export const LineHorizontal = styled.div`
-    height: 1px;
-    width: 100%;
-    background: ${({ theme }) => theme.colors["gray-200"]};
+  height: 1px;
+  width: 100%;
+  background: ${({ theme }) => theme.colors["gray-200"]};
+`;
+
+export const ContainerBenefits = styled.div`
+  //background-color: brown;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+`;
+
+export const Benefit = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //background-color: blueviolet;
+
+  > svg {
+    color: ${({ theme }) => theme.colors["gray-900"]};
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    p {
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 24px;
+      letter-spacing: 0.06em;
+      color: ${({ theme }) => theme.colors["gray-600"]};
+    }
+
+    svg {
+      color: ${({ theme }) => theme.colors["green-200"]};
+    }
+  }
 `;

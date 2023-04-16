@@ -1,38 +1,50 @@
 import { Check, Info } from "phosphor-react";
-import { Benefit, CardContainer, ContainerBenefits, ContainerButton, HeaderCard, LineHorizontal } from "./styles";
+import {
+  Benefit,
+  CardContainer,
+  ContainerBenefits,
+  ContainerButton,
+  HeaderCard,
+  LineHorizontal,
+} from "./styles";
 
-export function Card(){
-    return(
-        <CardContainer>
-           <HeaderCard>
-                <h3>Para você começar</h3>
-                <div>
-                    <h2>Essentials</h2>
-                    <p>19,97</p>
-                </div>
-           </HeaderCard>
-           <ContainerButton>
-                Assinar agora
-           </ContainerButton>
-          <LineHorizontal />
-          <ContainerBenefits>
-            <Benefit>
-            <div>
-            <Check size={22} weight="fill"/>
-            <p>Até 3 usuários</p>
-            </div>
+interface CardProps{
+  buttonContent: string;
+  title: string;
+  subtitle: string;
+  price?: number;
+  benefits: string;
+}
+export function Card({buttonContent, title, subtitle, price, benefits}: CardProps) {
+  return (
+    <CardContainer>
+      <HeaderCard>
+        <h3>{subtitle}</h3>
+        <div>
+          <h2>{title}</h2>
+          <p>{price}</p>
+        </div>
+      </HeaderCard>
+      <ContainerButton>{buttonContent}</ContainerButton>
+      <LineHorizontal />
+      <ContainerBenefits>
+        <Benefit>
+          <div>
+            <Check size={22} weight="fill" />
+            <p>{benefits}</p>
+          </div>
 
-            <Info size={18} />
-            </Benefit>
-            <Benefit>
-            <div>
-            <Check size={22} weight="fill"/>
+          <Info size={18} />
+        </Benefit>
+        <Benefit>
+          <div>
+            <Check size={22} weight="fill" />
             <p>Autoatendimento</p>
-            </div>
+          </div>
 
-            <Info size={18} />
-            </Benefit>
-          </ContainerBenefits>
-        </CardContainer>
-    );
+          <Info size={18} />
+        </Benefit>
+      </ContainerBenefits>
+    </CardContainer>
+  );
 }

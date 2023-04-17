@@ -7,43 +7,36 @@ import {
   HeaderCard,
   LineHorizontal,
 } from "./styles";
+import { CardProps } from "../../utils/CardItens";
 
-interface CardProps{
-  buttonContent: string;
-  title: string;
-  subtitle: string;
-  price?: number;
-  benefits: string;
+interface CardItemsProps {
+  items: CardProps;
 }
-export function Card({buttonContent, title, subtitle, price, benefits}: CardProps) {
+
+export function Card({ items }: CardItemsProps) {
   return (
     <CardContainer>
       <HeaderCard>
-        <h3>{subtitle}</h3>
+        <h3>{items.subtitle}</h3>
         <div>
-          <h2>{title}</h2>
-          <p>{price}</p>
+          <h2>{items.title}</h2>
+          {items.price?.map((prices) => (
+            <p key={prices}>{prices}</p>
+          ))}
         </div>
       </HeaderCard>
-      <ContainerButton>{buttonContent}</ContainerButton>
+      <ContainerButton>{items.buttonContent}</ContainerButton>
       <LineHorizontal />
       <ContainerBenefits>
-        <Benefit>
-          <div>
-            <Check size={22} weight="fill" />
-            <p>{benefits}</p>
-          </div>
-
-          <Info size={18} />
-        </Benefit>
-        <Benefit>
-          <div>
-            <Check size={22} weight="fill" />
-            <p>Autoatendimento</p>
-          </div>
-
-          <Info size={18} />
-        </Benefit>
+        {items.benefits.map((benefit) => (
+          <Benefit key={Math.floor(Math.random() * 100)}>
+            <div>
+              <Check size={22} weight="fill" />
+              <p>{benefit}</p>
+            </div>
+            {items.icon && <Info size={18} />}
+          </Benefit>
+        ))}
       </ContainerBenefits>
     </CardContainer>
   );

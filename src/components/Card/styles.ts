@@ -12,6 +12,11 @@ export const CardContainer = styled.div`
   gap: 16px;
 
   background: ${({ theme }) => theme.colors.white};
+  &:nth-child(3) {
+    svg {
+      overflow: visible;
+    }
+  }
 `;
 
 export const HeaderCard = styled.div`
@@ -109,13 +114,12 @@ export const Benefit = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    //flex-wrap: wrap;
     gap: 8px;
 
     p {
       font-weight: 400;
       font-size: 1rem;
-      line-height: 24px;
-      letter-spacing: 0.06em;
       color: ${({ theme }) => theme.colors["gray-600"]};
     }
 

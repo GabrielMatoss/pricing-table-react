@@ -1,4 +1,6 @@
 import { Check, Info } from "phosphor-react";
+import { v4 as uuidv4 } from "uuid";
+
 import {
   Benefit,
   CardContainer,
@@ -7,12 +9,14 @@ import {
   HeaderCard,
   LineHorizontal,
 } from "./styles";
+
 import { CardProps } from "../../utils/CardItens";
 
 interface CardItemsProps {
   items: CardProps;
 }
 
+ 
 export function Card({ items }: CardItemsProps) {
   return (
     <CardContainer>
@@ -29,7 +33,7 @@ export function Card({ items }: CardItemsProps) {
       <LineHorizontal />
       <ContainerBenefits>
         {items.benefits.map((benefit) => (
-          <Benefit key={Math.floor(Math.random() * 100)}>
+          <Benefit key={uuidv4()}>
             <div>
               <Check size={22} weight="fill" />
               <p>{benefit}</p>

@@ -10,13 +10,19 @@ export interface CardProps{
     icon?: boolean;
 }
 
+export function formatMoney(value: number) {
+    return value.toLocaleString("pt-BR", {
+      minimumFractionDigits: 2,
+    });
+}
+
 export const cardItens:CardProps[] = [
     {
         id: 0,
         title: "Essentials",
         subtitle: "Para você começar",
         buttonContent: "Assinar agora",
-        price: [20.02],
+        price: [19.97],
         benefits: ["Até 3 usuários", "Autoatendimento"],
         icon: true,
     },

@@ -12,7 +12,31 @@ export const CardContainer = styled.div`
   gap: 16px;
 
   background: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors["gray-200"]};
+  transition: all 0.4s;
+
+  &:hover {
+    border-color: ${({ theme }) => theme.colors["purple-100"]};
+  }
+
+  &:nth-child(2) {
+    background: ${({ theme }) => theme.colors["gray-900"]};
+    div > h2,
+    div > h2 + p {
+      color: ${({ theme }) => theme.colors.white};
+    }
+    > button {
+      &:hover,
+      &:active {
+        background-color: ${({ theme }) => theme.colors["purple-200"]};
+      }
+      color: ${({ theme }) => theme.colors.white};
+      background: ${({ theme }) => theme.colors["purple-100"]};
+    }
+  }
+
   &:nth-child(3) {
+    gap: 32px;
     svg {
       overflow: visible;
     }
@@ -83,6 +107,13 @@ export const ContainerButton = styled.button`
   font-weight: 700;
   font-size: 1rem;
   line-height: 24px;
+  transition: all 0.4s;
+
+  &:hover,
+  &:active {
+    background: ${({ theme }) => theme.colors["gray-800"]};
+    color: ${({ theme }) => theme.colors.white};
+  }
 `;
 
 export const LineHorizontal = styled.div`
@@ -92,19 +123,17 @@ export const LineHorizontal = styled.div`
 `;
 
 export const ContainerBenefits = styled.div`
-  //background-color: brown;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 16px;
 `;
 
-export const Benefit = styled.div`
+export const Benefit = styled.section`
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  //background-color: blueviolet;
 
   > svg {
     color: ${({ theme }) => theme.colors["gray-900"]};

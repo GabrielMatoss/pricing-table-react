@@ -16,7 +16,6 @@ interface CardItemsProps {
   items: CardProps;
 }
 
- 
 export function Card({ items }: CardItemsProps) {
   return (
     <CardContainer>

@@ -10,7 +10,7 @@ import {
   LineHorizontal,
 } from "./styles";
 
-import { CardProps } from "../../utils/CardItens";
+import { CardProps, formatMoney } from "../../utils/CardItens";
 
 interface CardItemsProps {
   items: CardProps;
@@ -25,7 +25,7 @@ export function Card({ items }: CardItemsProps) {
         <div>
           <h2>{items.title}</h2>
           {items.price?.map((prices) => (
-            <p key={prices}>{prices}</p>
+            <p key={prices}>{formatMoney(prices)}</p>
           ))}
         </div>
       </HeaderCard>

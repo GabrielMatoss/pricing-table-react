@@ -20,10 +20,29 @@ export const CardContainer = styled.div`
   }
 
   &:nth-child(2) {
+    .popHeader {
+      visibility: visible;
+      display: block;
+      opacity: initial;
+
+      p {
+        color: ${({ theme }) => theme.colors["gray-900"]};
+      }
+    }
     background: ${({ theme }) => theme.colors["gray-900"]};
     div > h2,
     div > h2 + p {
       color: ${({ theme }) => theme.colors.white};
+    }
+    div > p {
+      color: ${({ theme }) => theme.colors["gray-200"]};
+    }
+    section > svg {
+      color: ${({ theme }) => theme.colors["gray-500"]};
+    }
+
+    div > svg {
+      color: ${({ theme }) => theme.colors["green-100"]};
     }
     > button {
       &:hover,
@@ -143,7 +162,6 @@ export const Benefit = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    //flex-wrap: wrap;
     gap: 8px;
 
     p {
@@ -156,4 +174,22 @@ export const Benefit = styled.section`
       color: ${({ theme }) => theme.colors["green-200"]};
     }
   }
+`;
+
+export const PopHeader = styled.div`
+  opacity: 0;
+  display: none;
+  padding: 8px 16px;
+  max-width: max-content;
+  margin-inline: auto;
+  margin-top: -40px;
+  margin-bottom: 4px;
+  text-align: center;
+  background: ${({ theme }) => theme.colors.orange};
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 18px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 6px;
 `;

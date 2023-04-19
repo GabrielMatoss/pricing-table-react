@@ -7,7 +7,6 @@ export const CardContentContainer = styled.div`
     align-items: center;
     justify-content: center;
     gap: 40px;
-    
    padding-top: 80px;
    padding-inline: 20px;
    padding-bottom: 80px;

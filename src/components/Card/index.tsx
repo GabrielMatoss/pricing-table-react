@@ -8,7 +8,6 @@ import {
   ContainerButton,
   HeaderCard,
   LineHorizontal,
-  PopHeader,
 } from "./styles";
 
 import { CardProps, formatMoney } from "../../utils/CardItens";
@@ -20,9 +19,6 @@ interface CardItemsProps {
 export function Card({ items }: CardItemsProps) {
   return (
     <CardContainer>
-      <PopHeader className="popHeader">
-        <p>Mais vantajoso</p>
-      </PopHeader>
       <HeaderCard>
         <h3>{items.subtitle}</h3>
         <div>
@@ -32,7 +28,7 @@ export function Card({ items }: CardItemsProps) {
           ))}
         </div>
       </HeaderCard>
-      <ContainerButton>{items.buttonContent}</ContainerButton>
+      <ContainerButton className="buttons">{items.buttonContent}</ContainerButton>
       <LineHorizontal />
       <ContainerBenefits>
         {items.benefits.map((benefit) => (

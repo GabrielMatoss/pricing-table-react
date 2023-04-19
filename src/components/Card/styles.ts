@@ -6,6 +6,7 @@ export const CardContainer = styled.div`
   min-height: 282px;
   border-radius: 24px;
   padding: 24px;
+  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -13,21 +14,35 @@ export const CardContainer = styled.div`
 
   background: ${({ theme }) => theme.colors.white};
   border: 1px solid ${({ theme }) => theme.colors["gray-200"]};
-  transition: all 0.4s;
+  transition: border 0.4s;
+  transition: transform 0.3s;
 
-  &:hover {
+  &:hover:not( &:nth-child(2)) {
     border-color: ${({ theme }) => theme.colors["purple-100"]};
+    transform: scale(1.1)
   }
 
   &:nth-child(2) {
-    .popHeader {
-      visibility: visible;
-      display: block;
-      opacity: initial;
-
-      p {
-        color: ${({ theme }) => theme.colors["gray-900"]};
-      }
+    &:hover {
+    transform: scale(1.1)
+  }
+    padding-top: 40px;
+    &::after {
+      position: absolute;
+      display: inline-block;
+      top: -17px;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "Mais vantajoso";
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      line-height: 18px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 700;
+      background: ${({ theme }) => theme.colors.orange};
+      color: ${({ theme }) => theme.colors["gray-900"]};
     }
     background: ${({ theme }) => theme.colors["gray-900"]};
     div > h2,
@@ -44,14 +59,14 @@ export const CardContainer = styled.div`
     div > svg {
       color: ${({ theme }) => theme.colors["green-100"]};
     }
-    > button {
+     > button {
       &:hover,
       &:active {
         background-color: ${({ theme }) => theme.colors["purple-200"]};
       }
       color: ${({ theme }) => theme.colors.white};
       background: ${({ theme }) => theme.colors["purple-100"]};
-    }
+    } 
   }
 
   &:nth-child(3) {
@@ -67,6 +82,12 @@ export const CardContainer = styled.div`
     }
   }
 
+  @media (min-width: 1024px){
+    max-height: 380px;
+    &:nth-child(3) {
+   gap: 16px;
+    }
+  }
 
 `;
 
@@ -136,11 +157,11 @@ export const ContainerButton = styled.button`
   line-height: 24px;
   transition: all 0.4s;
 
-  &:hover,
+   &:hover,
   &:active {
     background: ${({ theme }) => theme.colors["gray-800"]};
     color: ${({ theme }) => theme.colors.white};
-  }
+  } 
 `;
 
 export const LineHorizontal = styled.div`
@@ -185,20 +206,3 @@ export const Benefit = styled.section`
 
 `;
 
-export const PopHeader = styled.div`
-  opacity: 0;
-  display: none;
-  padding: 8px 16px;
-  max-width: max-content;
-  margin-inline: auto;
-  margin-top: -40px;
-  margin-bottom: 4px;
-  text-align: center;
-  background: ${({ theme }) => theme.colors.orange};
-  font-weight: 700;
-  font-size: 0.75rem;
-  line-height: 18px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: 6px;
-`;

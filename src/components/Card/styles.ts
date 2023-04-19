@@ -35,7 +35,7 @@ export const CardContainer = styled.div`
       transform: translateX(-50%);
       content: "Mais vantajoso";
       padding: 8px 16px;
-      border-radius: 6px;
+      border-radius: 10px;
       font-size: 0.75rem;
       line-height: 18px;
       letter-spacing: 0.06em;

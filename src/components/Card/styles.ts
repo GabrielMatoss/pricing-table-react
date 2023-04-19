@@ -60,6 +60,14 @@ export const CardContainer = styled.div`
       overflow: visible;
     }
   }
+
+  @media (max-width: 330px){
+    &:nth-child(3) {
+   gap: 16px;
+    }
+  }
+
+
 `;
 
 export const HeaderCard = styled.div`
@@ -174,6 +182,7 @@ export const Benefit = styled.section`
       color: ${({ theme }) => theme.colors["green-200"]};
     }
   }
+
 `;
 
 export const PopHeader = styled.div`

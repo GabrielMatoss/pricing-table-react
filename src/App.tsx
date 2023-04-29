@@ -6,8 +6,8 @@ import { GlobalWrapper } from "./components/ContainerCard";
 export function App() {
   return (
     <ThemeProvider theme={defaultColorsTheme}>
-       <GlobalStyle />
-     <GlobalWrapper />
+      <GlobalStyle />
+      <GlobalWrapper />
     </ThemeProvider>
   );
 }
